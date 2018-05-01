@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  tools:context="link.k3n.autosizing_textView_sample.MainActivity">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--region レイアウトサイズの指定方法による動作の差異-->
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:text="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij"
+      android:maxLines="1"/>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="4dp"
+      android:layout_marginTop="4dp"
+      android:background="@android:color/darker_gray"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:text="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij"
+      android:maxLines="1"
+      app:autoSizeTextType="uniform"/>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="4dp"
+      android:layout_marginTop="4dp"
+      android:background="@android:color/darker_gray"/>
+
+    <!--endregion-->
+
+    <!--region maxLines等のプロパティ指定による動作の差異-->
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:text="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij"
+      android:singleLine="true"
+      app:autoSizeTextType="uniform"/>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="4dp"
+      android:layout_marginTop="4dp"
+      android:background="@android:color/darker_gray"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:text="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghij"
+      android:maxLines="1"
+      android:singleLine="true"
+      app:autoSizeTextType="uniform"/>
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:layout_marginBottom="4dp"
+      android:layout_marginTop="4dp"
+      android:background="@android:color/darker_gray"/>
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="20dp"
+      android:text="abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      android:ellipsize="end"
+      android:maxLines="1"
+      app:autoSizeTextType="uniform"/>
+
+    <!--endregion-->
+
+  </LinearLayout>
+
+</layout>
